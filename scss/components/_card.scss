@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+.card {
+	width: 100%;
+	margin: func.em(40, var.$font-size-primary) 0
+		func.em(60, var.$font-size-primary);
+}
+
+.card-content {
+	margin-bottom: func.em(76, var.$font-size-primary);
+	text-align: center;
+}
+
+.box {
+	position: relative;
+	@include mix.flexbox;
+	@include mix.flex-direction(column);
+	min-height: func.em(220, var.$font-size-primary);
+	overflow: hidden;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: func.em(4, var.$font-size-primary);
+	background-color: transparent;
+}
+
+.box--supervisor::before {
+	background-color: var.$color-cyan;
+}
+
+.box--team-builder::before {
+	background-color: var.$color-red;
+}
+
+.box--karma::before {
+	background-color: var.$color-orange;
+}
+
+.box--calculator::before {
+	background-color: var.$color-blue;
+}
+
+.box .content {
+	font-size: func.em(13, var.$font-size-primary);
+}
+
+.box .image {
+	width: func.em(56, var.$font-size-primary);
+	height: func.em(56, var.$font-size-primary);
+}
+
+@media (min-width: 48em) {
+	.card-content {
+		max-width: func.em(540, var.$font-size-primary);
+		margin-bottom: func.em(60, var.$font-size-primary);
+	}
+}

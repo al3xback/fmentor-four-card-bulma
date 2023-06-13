@@ -2,110 +2,39 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
 
-html {
-	overflow: visible;
-}
-
-.card--custom {
-	width: 100%;
+.card {
 	max-width: func.em(420, var.$font-size-primary);
-	margin: func.em(40, var.$font-size-primary) 0
-		func.em(60, var.$font-size-primary);
 }
 
-.card--custom .card-content {
-	padding: func.em(40, var.$font-size-primary) 0 0;
-	margin-bottom: func.em(76, var.$font-size-primary);
-	text-align: center;
+.card-content:first-child {
+	@include mix.border-radius(0);
 }
 
-.card--custom .title {
-	color: var.$color-dark-blue;
-	line-height: 1.25;
-}
-
-.card--custom .card-content .title {
+.card-content .title {
 	font-size: func.em(24, var.$font-size-primary);
 	font-weight: var.$font-weight-200;
 }
 
-.card--custom .card-content .subtitle {
+.card-content .subtitle {
 	margin-bottom: func.em(16, 24);
-	font-size: func.em(24, var.$font-size-primary);
-	color: var.$color-dark-blue;
 }
 
-.card--custom .box {
-	position: relative;
-	@include mix.flexbox;
-	@include mix.flex-direction(column);
-	min-height: func.em(220, var.$font-size-primary);
-	padding: func.em(24, var.$font-size-primary);
-	@include mix.border-radius(8px);
-	@include mix.box-shadow(
-		0px func.em(15, var.$font-size-primary)
-			func.em(20, var.$font-size-primary) 0 rgba(0, 0, 0, 0.1)
-	);
-	color: inherit;
-	overflow: hidden;
-}
-
-.card--custom .box::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: func.em(4, var.$font-size-primary);
-	background-color: transparent;
-}
-
-.card--custom .box--supervisor::before {
-	background-color: var.$color-cyan;
-}
-
-.card--custom .box--team-builder::before {
-	background-color: var.$color-red;
-}
-
-.card--custom .box--karma::before {
-	background-color: var.$color-orange;
-}
-
-.card--custom .box--calculator::before {
-	background-color: var.$color-blue;
-}
-
-.card--custom .box .title {
+.box .title {
 	margin-bottom: func.em(8, 20);
 	font-size: func.em(20, var.$font-size-primary);
 }
 
-.card--custom .box .content {
-	font-size: func.em(13, var.$font-size-primary);
-}
-
-.card--custom .box .image {
-	width: func.em(56, var.$font-size-primary);
-	height: func.em(56, var.$font-size-primary);
-}
-
 @media (min-width: 48em) {
-	.card--custom {
+	.card {
 		max-width: func.em(1110, var.$font-size-primary);
 	}
 
-	.card--custom .card-content {
-		max-width: func.em(540, var.$font-size-primary);
-		margin-bottom: func.em(60, var.$font-size-primary);
-	}
-
-	.card--custom .card-content .title,
-	.card--custom .card-content .subtitle {
+	.card-content .title,
+	.card-content .subtitle {
 		font-size: func.em(36, var.$font-size-primary);
 	}
 
-	.card--custom .card-content .subtitle {
+	.card-content .subtitle {
 		margin-bottom: func.em(16, 36);
 	}
 }
