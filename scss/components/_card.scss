@@ -2,26 +2,31 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
 
-.card {
+.section {
 	width: 100%;
+	max-width: func.em(420, var.$font-size-primary);
 	margin: func.em(40, var.$font-size-primary) 0
 		func.em(60, var.$font-size-primary);
 }
 
-.card-content {
+.section-header {
+	padding-top: func.em(40, var.$font-size-primary);
 	margin-bottom: func.em(76, var.$font-size-primary);
 	text-align: center;
 }
 
-.box {
-	position: relative;
+.card,
+.card-content {
 	@include mix.flexbox;
 	@include mix.flex-direction(column);
+}
+
+.card {
 	min-height: func.em(220, var.$font-size-primary);
 	overflow: hidden;
 }
 
-.box::before {
+.card::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -31,33 +36,41 @@
 	background-color: transparent;
 }
 
-.box--supervisor::before {
+.card--supervisor::before {
 	background-color: var.$color-cyan;
 }
 
-.box--team-builder::before {
+.card--team-builder::before {
 	background-color: var.$color-red;
 }
 
-.box--karma::before {
+.card--karma::before {
 	background-color: var.$color-orange;
 }
 
-.box--calculator::before {
+.card--calculator::before {
 	background-color: var.$color-blue;
 }
 
-.box .content {
+.card-content {
+	@include mix.flex(auto);
+}
+
+.card .content {
 	font-size: func.em(13, var.$font-size-primary);
 }
 
-.box .image {
+.card .image {
 	width: func.em(56, var.$font-size-primary);
 	height: func.em(56, var.$font-size-primary);
 }
 
 @media (min-width: 48em) {
-	.card-content {
+	.section {
+		max-width: func.em(1110, var.$font-size-primary);
+	}
+
+	.section-header {
 		max-width: func.em(540, var.$font-size-primary);
 		margin-bottom: func.em(60, var.$font-size-primary);
 	}

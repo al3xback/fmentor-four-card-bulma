@@ -2,39 +2,31 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
 
-.card {
-	max-width: func.em(420, var.$font-size-primary);
+.section-header .title {
+	font-size: func.em(24, var.$font-size-primary);
+	font-weight: var.$font-weight-200;
+}
+
+.section-header .subtitle {
+	margin-bottom: func.em(16, 24);
+}
+
+.card .title {
+	margin-bottom: func.em(8, 20);
+	font-size: func.em(20, var.$font-size-primary);
 }
 
 .card-content:first-child {
 	@include mix.border-radius(0);
 }
 
-.card-content .title {
-	font-size: func.em(24, var.$font-size-primary);
-	font-weight: var.$font-weight-200;
-}
-
-.card-content .subtitle {
-	margin-bottom: func.em(16, 24);
-}
-
-.box .title {
-	margin-bottom: func.em(8, 20);
-	font-size: func.em(20, var.$font-size-primary);
-}
-
 @media (min-width: 48em) {
-	.card {
-		max-width: func.em(1110, var.$font-size-primary);
-	}
-
-	.card-content .title,
-	.card-content .subtitle {
+	.section-header .title,
+	.section-header .subtitle {
 		font-size: func.em(36, var.$font-size-primary);
 	}
 
-	.card-content .subtitle {
+	.section-header .subtitle {
 		margin-bottom: func.em(16, 36);
 	}
 }

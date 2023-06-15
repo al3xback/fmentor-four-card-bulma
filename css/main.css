@@ -436,11 +436,11 @@ table th {
 /* Bulma Elements */
 .box {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 8px;
-  box-shadow: 0px 1em 1.3333333333em 0 rgba(0, 0, 0, 0.1);
-  color: inherit;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: hsl(0, 0%, 29%);
   display: block;
-  padding: 1.6em;
+  padding: 1.25rem;
 }
 
 a.box:hover, a.box:focus {
@@ -3817,21 +3817,21 @@ a.tag:hover {
 }
 
 .card {
-  background-color: transparent;
-  border-radius: 0;
-  box-shadow: none;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  box-shadow: 0px 1em 1.3333333333em 0 rgba(0, 0, 0, 0.1);
   color: inherit;
   max-width: 100%;
   position: relative;
 }
 
 .card-footer:first-child, .card-content:first-child, .card-header:first-child {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .card-footer:last-child, .card-content:last-child, .card-header:last-child {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .card-header {
@@ -3876,17 +3876,17 @@ a.tag:hover {
   position: relative;
 }
 .card-image:first-child img {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .card-image:last-child img {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .card-content {
   background-color: transparent;
-  padding: 2.6666666667em 0 0;
+  padding: 1.6em;
 }
 
 .card-footer {
@@ -10262,7 +10262,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .section {
-  padding: 3rem 1.5rem;
+  padding: 0;
 }
 @media screen and (min-width: 1024px) {
   .section {
@@ -10281,8 +10281,18 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 0.75rem 0;
 }
 
-.card {
-  max-width: 28em;
+.section-header .title {
+  font-size: 1.6em;
+  font-weight: 200;
+}
+
+.section-header .subtitle {
+  margin-bottom: 0.6666666667em;
+}
+
+.card .title {
+  margin-bottom: 0.4em;
+  font-size: 1.3333333333em;
 }
 
 .card-content:first-child {
@@ -10291,29 +10301,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   border-radius: 0;
 }
 
-.card-content .title {
-  font-size: 1.6em;
-  font-weight: 200;
-}
-
-.card-content .subtitle {
-  margin-bottom: 0.6666666667em;
-}
-
-.box .title {
-  margin-bottom: 0.4em;
-  font-size: 1.3333333333em;
-}
-
 @media (min-width: 48em) {
-  .card {
-    max-width: 74em;
-  }
-  .card-content .title,
-  .card-content .subtitle {
+  .section-header .title,
+  .section-header .subtitle {
     font-size: 2.4em;
   }
-  .card-content .subtitle {
+  .section-header .subtitle {
     margin-bottom: 0.4444444444em;
   }
 }
@@ -10456,18 +10449,20 @@ ol {
   color: hsl(212, 86%, 64%);
 }
 
-.card {
+.section {
   width: 100%;
+  max-width: 28em;
   margin: 2.6666666667em 0 4em;
 }
 
-.card-content {
+.section-header {
+  padding-top: 2.6666666667em;
   margin-bottom: 5.0666666667em;
   text-align: center;
 }
 
-.box {
-  position: relative;
+.card,
+.card-content {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -10480,11 +10475,14 @@ ol {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.card {
   min-height: 14.6666666667em;
   overflow: hidden;
 }
 
-.box::before {
+.card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -10494,33 +10492,44 @@ ol {
   background-color: transparent;
 }
 
-.box--supervisor::before {
+.card--supervisor::before {
   background-color: hsl(180, 62%, 55%);
 }
 
-.box--team-builder::before {
+.card--team-builder::before {
   background-color: hsl(0, 78%, 62%);
 }
 
-.box--karma::before {
+.card--karma::before {
   background-color: hsl(34, 97%, 64%);
 }
 
-.box--calculator::before {
+.card--calculator::before {
   background-color: hsl(212, 86%, 64%);
 }
 
-.box .content {
+.card-content {
+  -webkit-box-flex: auto;
+  -moz-box-flex: auto;
+  -ms-flex: auto;
+  -webkit-flex: auto;
+  flex: auto;
+}
+
+.card .content {
   font-size: 0.8666666667em;
 }
 
-.box .image {
+.card .image {
   width: 3.7333333333em;
   height: 3.7333333333em;
 }
 
 @media (min-width: 48em) {
-  .card-content {
+  .section {
+    max-width: 74em;
+  }
+  .section-header {
     max-width: 36em;
     margin-bottom: 4em;
   }
