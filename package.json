@@ -1,7 +1,7 @@
 {
 	"name": "fmentor-four-card-bulma",
 	"version": "1.0.0",
-	"description": "four card project with bulma",
+	"description": "four card feature section with bulma",
 	"main": "index.js",
 	"scripts": {
 		"dev": "sass --watch scss/main.scss css/main.css",
