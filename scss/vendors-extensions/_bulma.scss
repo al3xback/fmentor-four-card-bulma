@@ -1,6 +1,5 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts/mixins' as mix;
 
 .section-header .title {
 	font-size: func.em(24, var.$font-size-primary);
