@@ -17,7 +17,7 @@
 }
 
 .card-content:first-child {
-	@include mix.border-radius(0);
+	border-radius: 0;
 }
 
 @media (min-width: 48em) {

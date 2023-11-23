@@ -17,8 +17,8 @@
 
 .card,
 .card-content {
-	@include mix.flexbox;
-	@include mix.flex-direction(column);
+	display: flex;
+	flex-direction: column;
 }
 
 .card {
@@ -53,7 +53,7 @@
 }
 
 .card-content {
-	@include mix.flex(auto);
+	flex: auto;
 }
 
 .card .content {
