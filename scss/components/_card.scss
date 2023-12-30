@@ -2,6 +2,7 @@
 @use '../abstracts/functions' as func;
 
 .section {
+	gap: func.em(76, var.$font-size-primary);
 	width: 100%;
 	max-width: func.em(420, var.$font-size-primary);
 	margin: func.em(40, var.$font-size-primary) 0
@@ -10,7 +11,6 @@
 
 .section-header {
 	padding-top: func.em(40, var.$font-size-primary);
-	margin-bottom: func.em(76, var.$font-size-primary);
 	text-align: center;
 }
 
@@ -66,11 +66,11 @@
 
 @media (min-width: 48em) {
 	.section {
+		gap: func.em(60, var.$font-size-primary);
 		max-width: func.em(1110, var.$font-size-primary);
 	}
 
 	.section-header {
 		max-width: func.em(540, var.$font-size-primary);
-		margin-bottom: func.em(60, var.$font-size-primary);
 	}
 }
