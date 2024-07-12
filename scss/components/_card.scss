@@ -4,13 +4,12 @@
 .section {
 	width: 100%;
 	max-width: func.em(340, var.$font-size-primary);
-	margin: func.em(40, var.$font-size-primary) 0
-		func.em(60, var.$font-size-primary);
+	margin: func.em(50, var.$font-size-primary) 0
+		func.em(80, var.$font-size-primary);
 }
 
 .section-header {
-	padding-top: func.em(40, var.$font-size-primary);
-	margin-bottom: func.em(76, var.$font-size-primary);
+	margin-bottom: func.em(40, var.$font-size-primary);
 	text-align: center;
 }
 
@@ -67,6 +66,8 @@
 @media (min-width: 57.5em) {
 	.section {
 		max-width: func.em(1110, var.$font-size-primary);
+		margin: func.em(70, var.$font-size-primary) 0
+			func.em(100, var.$font-size-primary);
 	}
 
 	.section-header {

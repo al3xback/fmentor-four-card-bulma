@@ -1,13 +1,21 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
 
-.section-header .title {
-	font-size: func.em(24, var.$font-size-primary);
-	font-weight: var.$font-weight-200;
+.subtitle:not(.is-spaced) + .title {
+	margin-top: 0;
 }
 
 .section-header .subtitle {
+	margin-bottom: func.em(6, 24);
+	font-size: func.em(24, var.$font-size-primary);
+	font-weight: var.$font-weight-200;
+	color: var.$color-dark-blue;
+	line-height: 1;
+}
+
+.section-header .title {
 	margin-bottom: func.em(16, 24);
+	font-size: func.em(24, var.$font-size-primary);
 }
 
 .card .title {
@@ -15,17 +23,21 @@
 	font-size: func.em(20, var.$font-size-primary);
 }
 
+.card-content {
+	padding: func.em(28, var.$font-size-primary);
+}
+
 .card-content:first-child {
 	border-radius: 0;
 }
 
 @media (min-width: 57.5em) {
-	.section-header .title,
-	.section-header .subtitle {
+	.section-header .subtitle,
+	.section-header .title {
 		font-size: func.em(36, var.$font-size-primary);
 	}
 
 	.section-header .subtitle {
-		margin-bottom: func.em(16, 36);
+		margin-bottom: func.em(10, 36);
 	}
 }
